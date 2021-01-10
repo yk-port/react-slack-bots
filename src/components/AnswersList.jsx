@@ -6,7 +6,7 @@ const AnswersList = ({ answers }) => {
     <div className="c-grid__answer">
       {
         answers.map((value, index) => {
-          return <Answer content={value.content} key={index} />
+          return <Answer content={value.content} key={index.toString()} />
         })
       }
     </div>
