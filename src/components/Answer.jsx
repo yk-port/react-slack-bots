@@ -6,11 +6,14 @@ const useStyles = makeStyles((theme) => ({
   root: {},
 }));
 
-const Answer = ({ content }) => {
+const Answer = ({ content, nextId, select }) => {
   // const classes = useStyles();
 
   return (
-    <Button variant="contained">
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => select(content, nextId)} >
       {content}
     </Button>
   )

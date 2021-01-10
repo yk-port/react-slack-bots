@@ -21,9 +21,12 @@ const Chats = ({ chats }) => {
   return (
     <List className={classes.root}>
       {
-        chats.map((chat, index) => {
-          return <Chat text={chat.text} type={chat.type} key={index.toString()} />
-        })
+        chats.map((chat, index) => (
+          <Chat
+            text={chat.text}
+            type={chat.type}
+            key={index.toString()} />
+        ))
       }
     </List>
   )
