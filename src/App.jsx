@@ -4,7 +4,7 @@ import './assets/styles/style.css';
 
 export default class App extends React.Component {
   constructor(props) {
-    props(super);
+    super(props);
     this.state = {
       answers: [],
       chats: [],
@@ -17,6 +17,9 @@ export default class App extends React.Component {
   render() {
     return (
       <section className="c-section">
+        <div className="c-box">
+          {this.state.currentId}
+        </div>
       </section>
     );
   }
