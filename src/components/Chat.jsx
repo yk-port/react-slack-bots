@@ -3,6 +3,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 
+import NoProfile from '../assets/images/no-profile.png';
+import MyProfile from '../assets/images/my-profile.jpg';
+
 const Chat = ({ text, type }) => {
   const isQuestion = (type === 'question');
   const classes = isQuestion ?
@@ -10,10 +13,13 @@ const Chat = ({ text, type }) => {
                   'p-chat__reverse';
 
   return (
-    <ListItem className={classes}>
-      { console.log(isQuestion) }
+    <ListItem className={classes}> 
       <ListItemAvatar>
-        <Avatar alt="icon" src="/static/images/avatar/1.jpg" />
+        {
+          isQuestion ?
+          <Avatar alt="icon" src={MyProfile} /> :
+          <Avatar alt="icon" src={NoProfile} />
+        }
       </ListItemAvatar>
       <div className="p-chat__bubble">
         {text}
