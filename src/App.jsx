@@ -1,4 +1,6 @@
-import './App.css';
+import React from 'react';
+import defaultDataset from './dataset';
+import './assets/styles/style.css';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -7,15 +9,15 @@ export default class App extends React.Component {
       answers: [],
       chats: [],
       currentId: 'init',
-      dataset: {},
+      dataset: defaultDataset,
       open: false
     }
   }
 
   render() {
     return (
-      <div>
-      </div>
+      <section className="c-section">
+      </section>
     );
   }
 }
