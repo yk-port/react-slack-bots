@@ -19,7 +19,7 @@ const Chats = ({ chats }) => {
   const classes = useStyles();
 
   return (
-    <List className={classes.chats}>
+    <List className={classes.chats} id={'scroll-area'}>
       {
         chats.map((chat, index) => (
           <Chat
