@@ -1,4 +1,4 @@
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
 import * as admin from "firebase-admin";
 
 // adminを初期化する
@@ -11,8 +11,8 @@ const db = admin.firestore();
 const sendResponse = (response: functions.Response, statusCode: number, body: any) => {
   response.send({
     statusCode,
-    body: JSON.stringify(body)
-  })
+    body: JSON.stringify(body),
+  });
 };
 
 // https.onRequestメソッドで関数を作成
