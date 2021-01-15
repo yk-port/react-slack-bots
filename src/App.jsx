@@ -83,7 +83,6 @@ export default class App extends React.Component {
     (async() => {
       const dataset = this.state.dataset;
       await db.collection('questions').get().then(snapshots => {
-        console.log(snapshots)
         snapshots.forEach(doc => {
           dataset[doc.id] = doc.data();
         })
