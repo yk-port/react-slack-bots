@@ -35,6 +35,13 @@ export default class App extends Component {
         this.displayNextQuestion(nextQuestionId);
         break;
 
+      case /^https:*/.test(nextQuestionId):
+        const a = document.createElement("a");
+        a.href = nextQuestionId;
+        a.target = "_blank";
+        a.click();
+        break;
+
       default:
         const chats = this.state.chats;
         chats.push({
@@ -44,7 +51,11 @@ export default class App extends Component {
         this.setState({
           chats: chats,
         });
-        this.displayNextQuestion(nextQuestionId);
+
+        // 遅延表示
+        setTimeout(() => {
+          this.displayNextQuestion(nextQuestionId);
+        }, 500);
         break;
     }
   };
@@ -52,6 +63,14 @@ export default class App extends Component {
   componentDidMount() {
     const initAnswer = "";
     this.selectAnswer(initAnswer, this.state.currentId);
+  }
+
+  // チャットエリアのスクロールの挙動
+  componentDidUpdate() {
+    const scrollArea = document.getElementById("scroll-area");
+    if (scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
   }
 
   render() {
